@@ -1,0 +1,99 @@
+body {
+  font-family: Roboto, sans-serif;
+  font-weight: 100;
+}
+
+h1 {
+  text-align: center;
+  background-color: purple;
+  color: white;
+  font-size: 50px;
+  padding: 20px;
+  margin: 0px;
+}
+
+#list {
+  margin-left: 50px;
+  margin-right: 50px;
+}
+
+.contact {
+  display: inline-block;
+  margin: 25px;
+  max-width: 175px;
+}
+
+#primary_inputs {
+  text-align: center;
+}
+
+#add, #search {
+  font-size: 22px;
+  border-radius: 10px;
+  padding: 15px;
+  border: 1px solid black;
+  margin: 20px;
+}
+
+#add:hover {
+  background-color: purple;
+  cursor: pointer;
+  color: white;
+}
+
+input {
+  margin-bottom: 10px;
+  padding: 10px;
+  font-size: 18px;
+}
+
+#update_form {
+  margin: auto;
+  width: 50%;
+  padding: 5px;
+}
+
+#update_form > input.bar {
+  width: 350px;
+}
+
+.hide {
+  display: none;
+}
+
+.tag {
+  border-radius: 20px;
+  border: 1px solid grey;
+  font-size: 14px;
+  padding: 8px;
+  margin-bottom: 5px;
+}
+
+.cancel:hover, .submit:hover, .edit:hover, .delete:hover {
+  color: white;
+  background-color: purple;
+  cursor: pointer;
+}
+
+.tag:hover {
+  color: white;
+  background-color: darkcyan;
+  cursor: pointer;
+}
+
+h2 {
+  font-size: 32px;
+  text-align: left;
+  color: purple;
+}
+
+h3 {
+  font-size: 21px;
+  text-align: left;
+  color: purple;
+}
+
+.edit, .delete {
+  font-size: 16px;
+  padding: 8px;
+}

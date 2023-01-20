@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <link rel="stylesheet" href="/stylesheets/style.css">
+  <script src="/javascripts/jquery.js"></script>
+  <script src="/javascripts/handlebars.js"></script>
+  <script src="/javascripts/app.js"></script>
+</head>
+<body>
+  <h1>Contact Manager</h1>
+  
+  <div id="primary_inputs">
+    <button id="add">+ Add New Contact</button>
+    <input id="search" type="text" placeholder="Search contacts">
+  </div>
+
+  <section id="list">
+  </section>
+
+  <form id="update_form" class="hide">
+    <h2></h2>
+    <label for="full_name">Full name:</label><br>
+    <input type="text" name="full_name" class="name bar"><br>
+    <label for="email">Email:</label><br>
+    <input type="email" name="email" class="email bar"><br>
+    <label for="phone_number">Phone number:</label><br>
+    <input type="tel" name="phone_number" class="phone bar" maxlength=10 placeholder="e.g. 123456789"><br>
+    <label for="tags">Tags:</label><br>
+    <input type="text" name="tags" class="tags bar"><br>
+    <div class="tag_buttons"></div><br>
+    <input class="submit" type="submit">
+    <input type="button" id="cancel" class="cancel" value="Cancel">
+  </form>
+
+  <script id="contact_template" type="text/x-handlebars">
+    <div id={{id}} data-name="{{full_name}}" data-phone="{{phone_number}}" data-email="{{email}}" data-tags="{{tags}}" class="contact">
+      <h3>{{full_name}}</h3>
+      <dl>
+        <dt><strong>Email:</strong></dt>
+        <dt>{{email}}</dt><br>
+        <dt><strong>Phone number:</strong></dt>
+        <dt>{{phone_number}}</dt>
+      </dl>
+      <div data-tag={{id}}>
+        {{#if tags}}
+          {{#each tags}}
+            <button class="tag">{{this}}</button>
+          {{/each}}
+        {{else}}
+           <span>No tags.</span>
+        {{/if}}
+        <br><br>
+      </div>
+      <button class="edit">Edit</button>
+      <button class="delete">Delete</button>
+  </div>
+  </script>
+</body>
+</html>

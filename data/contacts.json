@@ -1,0 +1,58 @@
+[
+  {
+    "full_name": "Charles Olivera",
+    "phone_number": "1234453333",
+    "email": "Charles@DoBronx.com",
+    "tags": "champ,lightweight",
+    "id": 20
+  },
+  {
+    "full_name": "Max Holloway",
+    "phone_number": "1234451223",
+    "email": "max.holloway@blessed.com",
+    "tags": "champ,featherweight",
+    "id": 21
+  },
+  {
+    "full_name": "Conor Mcgregor",
+    "phone_number": "1234512345",
+    "email": "conor@mcgregor.com",
+    "tags": "champ,lightweight",
+    "id": 22
+  },
+  {
+    "full_name": "Tony Ferguson",
+    "phone_number": "1234512345",
+    "email": "tony@ferguson.com",
+    "tags": "interim,lightweight",
+    "id": 23
+  },
+  {
+    "full_name": "Conan \"Coco\" O'Brien",
+    "phone_number": "1234123412",
+    "email": "team@coco.com",
+    "tags": "late-night,comedian",
+    "id": 24
+  },
+  {
+    "full_name": "Anderson Silva",
+    "phone_number": "1230987789",
+    "email": "anderson@silva.com",
+    "tags": "champ,legbroke",
+    "id": 25
+  },
+  {
+    "full_name": "Justin Gaethje",
+    "phone_number": "5555555555",
+    "email": "the@highlight.com",
+    "tags": "highlight,interim",
+    "id": 27
+  },
+  {
+    "full_name": "Bobby Lee",
+    "phone_number": "0000000000",
+    "email": "bobby@tigerbelly.com",
+    "tags": "comedian,funny",
+    "id": 28
+  }
+]
