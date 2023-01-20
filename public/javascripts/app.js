@@ -84,6 +84,7 @@ document.addEventListener('DOMContentLoaded', () => {
       this.update_form = document.querySelector('#update_form');
       this.primary_inputs = document.querySelector('#primary_inputs');
       this.cancelButton = document.querySelector('#cancel');
+      this.common_tags = document.querySelector('#common_tags');
       this.viewingId = null;
 
       this.compileTemplates();
@@ -105,12 +106,13 @@ document.addEventListener('DOMContentLoaded', () => {
     hideMain() {
       Array.from(this.list.children).forEach(contact => this.hide(contact));
       this.hide(this.primary_inputs);
-      this.show(this.update_form);
+      this.hide(this.common_tags);
     }
 
     showMain() {
       this.hide(this.update_form);
       this.show(this.primary_inputs);
+      this.hide(this.common_tags);
       Array.from(this.list.children).forEach(contact => this.show(contact));
       this.update_form.querySelector('h2').textContent = '';
       this.update_form.reset();
@@ -157,6 +159,7 @@ document.addEventListener('DOMContentLoaded', () => {
       this.addButton.addEventListener('click', (e) => {
         e.preventDefault();
         this.hideMain();
+        this.show(this.update_form);
         this.update_form.querySelector('h2').textContent = "Create Contact"
       });
     }
@@ -182,6 +185,7 @@ document.addEventListener('DOMContentLoaded', () => {
         e.preventDefault();
         if (e.target.classList.contains('edit')) {
           this.hideMain();
+          this.show(this.update_form);
           this.update_form.querySelector('h2').textContent = "Edit Contact"
 
           let parent = e.target.parentNode;
@@ -227,6 +231,35 @@ document.addEventListener('DOMContentLoaded', () => {
       });
     }
 
+    bindCommonTag() {
+      this.list.addEventListener('click', (e) => {
+        e.preventDefault();
+        if (e.target.tagName === 'BUTTON' && e.target.classList.contains('tag')) {
+          this.showOnlyContactsWith(e.target.textContent);
+        }
+      });
+    }
+
+    showOnlyContactsWith(tag) {
+      this.hideMain();
+      this.show(this.common_tags);
+      this.common_tags.querySelector('#tagname').textContent = tag;
+      Array.from(this.list.children).forEach(contact => {
+        if (!contact.dataset.tags.split(',').includes(tag)) {
+          this.hide(contact);
+        } else {
+          this.show(contact);
+        }
+      });
+    }
+
+    bindShowAll() {
+      this.common_tags.querySelector('input').addEventListener('click', (e) => {
+        e.preventDefault();
+        this.showMain();
+      });
+    }
+
   }
 
   class Controller {
@@ -246,6 +279,9 @@ document.addEventListener('DOMContentLoaded', () => {
       this.view.bindEditContact(this.handleEditContact.bind(this));
 
       this.view.bindDeleteContact(this.handleDeleteContact.bind(this));
+
+      this.view.bindCommonTag();
+      this.view.bindShowAll();
     }
 
     async onContactsUpdated() {

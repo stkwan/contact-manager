@@ -83,7 +83,7 @@ input {
 
 h2 {
   font-size: 32px;
-  text-align: left;
+  text-align: center;
   color: purple;
 }
 
@@ -96,4 +96,15 @@ h3 {
 .edit, .delete {
   font-size: 16px;
   padding: 8px;
+}
+
+#common_tags {
+  text-align: center;
+}
+
+#tagname {
+  color: darkorange;
+  font-style: italic;
+  font-size: 32px;
+  font-family: 'Courier New', Courier, monospace;
 }
