@@ -10,23 +10,25 @@ document.addEventListener('DOMContentLoaded', () => {
       try {
         let response = await fetch('http://localhost:3000/api/contacts');
         this.contacts = await response.json();
-        this.getAllTags();
         return this.contacts;
       } catch(error) {
         alert(error);
       }
     }
 
-    getAllTags() {
+    async getAllTags() {
+      let allTags = [];
       this.contacts.forEach(contact => {
         if (contact.tags) {
           contact.tags.split(',').forEach(tag => {
-            if (this.allTags.indexOf(tag) === -1) {
-              this.allTags.push(tag);
+            if (allTags.indexOf(tag) === -1) {
+              allTags.push(tag);
             }
           });
         }
-      })
+      });
+      this.allTags = allTags;
+      return allTags;
     }
 
     addContact(contact) {
@@ -87,6 +89,7 @@ document.addEventListener('DOMContentLoaded', () => {
       this.common_tags = document.querySelector('#common_tags');
       this.tag_toggle = document.querySelector('#tag_toggle');
       this.custom_tag = document.querySelector('#custom_tag');
+      this.tagsList = null;
       this.viewingId = null;
 
       this.compileTemplates();
@@ -175,13 +178,13 @@ document.addEventListener('DOMContentLoaded', () => {
       this.list.appendChild(message);
     }
 
-    bindAddButton(tags) {
+    bindAddButton() {
       this.addButton.addEventListener('click', (e) => {
         e.preventDefault();
         this.hideMain();
         this.show(this.update_form);
         this.update_form.querySelector('h2').textContent = "Create Contact"
-        this.displayTagToggle(tags);
+        this.displayTagToggle(this.tagsList);
       });
     }
 
@@ -201,7 +204,7 @@ document.addEventListener('DOMContentLoaded', () => {
       });
     }
    
-    bindEditButton(tags) {
+    bindEditButton() {
       this.list.addEventListener('click', (e) => {
         e.preventDefault();
         if (e.target.classList.contains('edit')) {
@@ -217,7 +220,7 @@ document.addEventListener('DOMContentLoaded', () => {
           this.update_form.querySelector('.phone').value = parent.dataset.phone.replace(/\(|\)|-|\s+/g, '');
           this.update_form.querySelector('.tags').value = parent.dataset.tags;
 
-          this.displayTagToggle(tags);
+          this.displayTagToggle(this.tagsList);
         }
       });
     }
@@ -249,6 +252,7 @@ document.addEventListener('DOMContentLoaded', () => {
           let confirm = window.confirm(`Are you sure you want to permanantly delete contact ${name}?`);
           if (confirm) {
             handler(id);
+            this.search.value = '';
           }
         }
       });
@@ -345,9 +349,9 @@ document.addEventListener('DOMContentLoaded', () => {
       this.view.bindSearch();
       this.view.bindCommonTag();
       this.view.bindCancel();
-      this.view.bindAddButton(this.model.allTags);
+      this.view.bindAddButton();
+      this.view.bindEditButton();
       this.view.bindAddContact(this.handleAddContact.bind(this));
-      this.view.bindEditButton(this.model.allTags);
       this.view.bindEditContact(this.handleEditContact.bind(this));
       this.view.bindTagToggle();
       this.view.bindCustomTag();
@@ -357,6 +361,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
     async onContactsUpdated() {
       let contacts = await this.model.refreshContacts();
+      let tags = await this.model.getAllTags();
+      this.view.tagsList = tags.sort();
       this.view.renderContacts(contacts);
     }
 

@@ -3,12 +3,12 @@
     "full_name": "Charles Oliveira",
     "phone_number": "1234453333",
     "email": "Charles@DoBronx.com",
-    "tags": "champ,lightweight,Brazilian",
+    "tags": "champ,lightweight,Brazilian,blonde",
     "id": 20
   },
   {
     "full_name": "Max Holloway",
-    "phone_number": "1234451223",
+    "phone_number": "3412341341",
     "email": "max.holloway@blessed.com",
     "tags": "champ,featherweight,ufc,Hawaiian",
     "id": 21
@@ -17,7 +17,7 @@
     "full_name": "Conor Mcgregor",
     "phone_number": "1234512345",
     "email": "conor@mcgregor.com",
-    "tags": "lightweight,ufc,funny,UK,legbroke",
+    "tags": "lightweight,ufc,legbroke,UK",
     "id": 22
   },
   {
@@ -26,13 +26,6 @@
     "email": "tony@ferguson.com",
     "tags": "lightweight,USA,ufc,funny",
     "id": 23
-  },
-  {
-    "full_name": "Conan O'Brien",
-    "phone_number": "nonumber",
-    "email": "team@coco.com",
-    "tags": "comedian,podcaster,funny",
-    "id": 24
   },
   {
     "full_name": "Anderson Silva",
@@ -56,13 +49,6 @@
     "id": 28
   },
   {
-    "full_name": "Dustin Poirier",
-    "phone_number": "3453454435",
-    "email": "dustin@p.com",
-    "tags": "lightweight,featherweight,ufc",
-    "id": 33
-  },
-  {
     "full_name": "Israel Adesanya",
     "phone_number": "8789778988",
     "email": "izzy@izzy.com",
@@ -82,5 +68,19 @@
     "email": "steven@yuen.com",
     "tags": "funny,Korean,actor",
     "id": 38
+  },
+  {
+    "full_name": "Conan O'Brien",
+    "phone_number": "9384923849",
+    "email": "team@coco.com",
+    "tags": "podcaster,comedian,funny,late-night",
+    "id": 39
+  },
+  {
+    "full_name": "Alex Pereira",
+    "phone_number": "2342342342",
+    "email": "potan@ufc.com",
+    "tags": "champ,middleweight,ufc,USA,Brazilian",
+    "id": 40
   }
 ]
