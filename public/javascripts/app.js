@@ -144,17 +144,35 @@ document.addEventListener('DOMContentLoaded', () => {
 
     bindSearch() {
       this.search.addEventListener('keyup', (e) => {
+        if (this.list.querySelector('h2')) {
+          this.list.querySelector('h2').remove();
+        }
+
         let entry = this.search.value.toLowerCase();
+        let regEx = new RegExp(entry);
+        let anyMatches = Array.from(this.list.children).some(contact => {
+          return regEx.test(String(contact.dataset.name).toLowerCase());
+        });
+
         Array.from(this.list.children).forEach(contact => {
-          let name = contact.dataset.name.toLowerCase();
-          let regEx = new RegExp(entry);
+          let name = String(contact.dataset.name).toLowerCase();
           if (!regEx.test(name)) {
             this.hide(contact);
           } else {
             this.show(contact);
           }
         });
+
+        if (!anyMatches) {
+          this.renderNoMatches(entry);
+        }
       });
+    }
+
+    renderNoMatches(name) {
+      let message = document.createElement('h2');
+      message.textContent = `There are no contacts matching "${name}"`
+      this.list.appendChild(message);
     }
 
     bindAddButton(tags) {
@@ -250,7 +268,7 @@ document.addEventListener('DOMContentLoaded', () => {
       this.show(this.common_tags);
       this.common_tags.querySelector('#tagname').textContent = tag;
       Array.from(this.list.children).forEach(contact => {
-        if (!contact.dataset.tags.split(',').includes(tag)) {
+        if (!String(contact.dataset.tags).split(',').includes(tag)) {
           this.hide(contact);
         } else {
           this.show(contact);
@@ -258,7 +276,7 @@ document.addEventListener('DOMContentLoaded', () => {
       });
     }
 
-    bindShowAll() {
+    bindShowAllContacts() {
       this.common_tags.querySelector('input').addEventListener('click', (e) => {
         e.preventDefault();
         this.showMain();
@@ -317,32 +335,24 @@ document.addEventListener('DOMContentLoaded', () => {
         inputElement.value = '';
       });
     }
-
   }
 
   class Controller {
     constructor(model, view) {
       this.model = model;
       this.view = view;
-
       this.onContactsUpdated();
-
       this.view.bindSearch();
       this.view.bindCommonTag();
       this.view.bindCancel();
-
       this.view.bindAddButton(this.model.allTags);
       this.view.bindAddContact(this.handleAddContact.bind(this));
-
       this.view.bindEditButton(this.model.allTags);
       this.view.bindEditContact(this.handleEditContact.bind(this));
-
       this.view.bindTagToggle();
       this.view.bindCustomTag();
-
       this.view.bindDeleteContact(this.handleDeleteContact.bind(this));
-
-      this.view.bindShowAll();
+      this.view.bindShowAllContacts();
     }
 
     async onContactsUpdated() {
@@ -364,7 +374,6 @@ document.addEventListener('DOMContentLoaded', () => {
       model.deleteContact(id);
       this.onContactsUpdated();
     }
-
   }
 
   let model = new Model();

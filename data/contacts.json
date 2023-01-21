@@ -24,21 +24,21 @@
     "full_name": "Tony Ferguson",
     "phone_number": "1234512345",
     "email": "tony@ferguson.com",
-    "tags": "lightweight,USA,ufc",
+    "tags": "lightweight,USA,ufc,funny",
     "id": 23
   },
   {
     "full_name": "Conan O'Brien",
-    "phone_number": "1234123412",
+    "phone_number": "nonumber",
     "email": "team@coco.com",
-    "tags": "comedian,podcaster",
+    "tags": "comedian,podcaster,funny",
     "id": 24
   },
   {
     "full_name": "Anderson Silva",
     "phone_number": "1230987789",
     "email": "anderson@silva.com",
-    "tags": "legbroke,ufc,goat",
+    "tags": "legbroke,ufc,goat,middleweight",
     "id": 25
   },
   {
@@ -52,7 +52,7 @@
     "full_name": "Bobby Lee",
     "phone_number": "0000000001",
     "email": "bobby@tigerbelly.com",
-    "tags": "comedian,funny,podcaster",
+    "tags": "podcaster,funny,comedian,Korean",
     "id": 28
   },
   {
@@ -73,14 +73,14 @@
     "full_name": "Michael Bisping",
     "phone_number": "2332432423",
     "email": "michael@bisping.com",
-    "tags": "ufc,middleweight,funny,UK",
+    "tags": "ufc,funny,UK,middleweight",
     "id": 36
   },
   {
-    "full_name": "Nate Diaz",
-    "phone_number": "3453453453",
-    "email": "nate@diaz.com",
-    "tags": "welterweight,ufc,funny,USA",
-    "id": 37
+    "full_name": "Steven Yuen",
+    "phone_number": "3423423423",
+    "email": "steven@yuen.com",
+    "tags": "funny,Korean,actor",
+    "id": 38
   }
 ]
