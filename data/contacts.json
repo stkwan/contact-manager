@@ -3,49 +3,49 @@
     "full_name": "Charles Oliveira",
     "phone_number": "1234453333",
     "email": "Charles@DoBronx.com",
-    "tags": "champ,lightweight,goat",
+    "tags": "champ,lightweight,Brazilian",
     "id": 20
   },
   {
-    "full_name": "Max \"Blessed\" Holloway",
+    "full_name": "Max Holloway",
     "phone_number": "1234451223",
     "email": "max.holloway@blessed.com",
-    "tags": "champ,featherweight",
+    "tags": "champ,featherweight,ufc,Hawaiian",
     "id": 21
   },
   {
     "full_name": "Conor Mcgregor",
     "phone_number": "1234512345",
     "email": "conor@mcgregor.com",
-    "tags": "champ,lightweight,legbroke",
+    "tags": "lightweight,ufc,funny,UK,legbroke",
     "id": 22
   },
   {
-    "full_name": "Tony \"El Cucuy\" Ferguson",
+    "full_name": "Tony Ferguson",
     "phone_number": "1234512345",
     "email": "tony@ferguson.com",
-    "tags": "interim,lightweight",
+    "tags": "lightweight,USA,ufc",
     "id": 23
   },
   {
-    "full_name": "Conan \"Coco\" O'Brien",
+    "full_name": "Conan O'Brien",
     "phone_number": "1234123412",
     "email": "team@coco.com",
-    "tags": "late-night,comedian,podcaster,tv",
+    "tags": "comedian,podcaster",
     "id": 24
   },
   {
     "full_name": "Anderson Silva",
     "phone_number": "1230987789",
     "email": "anderson@silva.com",
-    "tags": "champ,legbroke,goat",
+    "tags": "legbroke,ufc,goat",
     "id": 25
   },
   {
     "full_name": "Justin Gaethje",
-    "phone_number": "no phone",
+    "phone_number": "2343243242",
     "email": "the@highlight.com",
-    "tags": "highlight,interim",
+    "tags": "ufc,USA,lightweight,highlight",
     "id": 27
   },
   {
@@ -56,24 +56,31 @@
     "id": 28
   },
   {
-    "full_name": "Alexander Volkanovski",
-    "phone_number": "2112312312",
-    "email": "alex@alex.com",
-    "tags": "featherweight,champ,ufc",
-    "id": 30
-  },
-  {
-    "full_name": "Antonia Lamonica",
-    "phone_number": "1234512344",
-    "email": "toni@wp.com",
-    "tags": "nurse,friend",
-    "id": 31
-  },
-  {
     "full_name": "Dustin Poirier",
     "phone_number": "3453454435",
     "email": "dustin@p.com",
-    "tags": "interim,lightweight",
+    "tags": "lightweight,featherweight,ufc",
     "id": 33
+  },
+  {
+    "full_name": "Israel Adesanya",
+    "phone_number": "8789778988",
+    "email": "izzy@izzy.com",
+    "tags": "middleweight,ufc,australian",
+    "id": 35
+  },
+  {
+    "full_name": "Michael Bisping",
+    "phone_number": "2332432423",
+    "email": "michael@bisping.com",
+    "tags": "ufc,middleweight,funny,UK",
+    "id": 36
+  },
+  {
+    "full_name": "Nate Diaz",
+    "phone_number": "3453453453",
+    "email": "nate@diaz.com",
+    "tags": "welterweight,ufc,funny,USA",
+    "id": 37
   }
 ]

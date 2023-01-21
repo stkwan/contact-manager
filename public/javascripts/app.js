@@ -85,6 +85,8 @@ document.addEventListener('DOMContentLoaded', () => {
       this.primary_inputs = document.querySelector('#primary_inputs');
       this.cancelButton = document.querySelector('#cancel');
       this.common_tags = document.querySelector('#common_tags');
+      this.tag_toggle = document.querySelector('#tag_toggle');
+      this.custom_tag = document.querySelector('#custom_tag');
       this.viewingId = null;
 
       this.compileTemplates();
@@ -155,12 +157,13 @@ document.addEventListener('DOMContentLoaded', () => {
       });
     }
 
-    bindAddButton() {
+    bindAddButton(tags) {
       this.addButton.addEventListener('click', (e) => {
         e.preventDefault();
         this.hideMain();
         this.show(this.update_form);
         this.update_form.querySelector('h2').textContent = "Create Contact"
+        this.displayTagToggle(tags);
       });
     }
 
@@ -176,11 +179,11 @@ document.addEventListener('DOMContentLoaded', () => {
           });
           handler(data);
           this.showMain();
-      }
+        }
       });
     }
    
-    bindEditButton() {
+    bindEditButton(tags) {
       this.list.addEventListener('click', (e) => {
         e.preventDefault();
         if (e.target.classList.contains('edit')) {
@@ -195,6 +198,8 @@ document.addEventListener('DOMContentLoaded', () => {
           this.update_form.querySelector('.email').value = parent.dataset.email;
           this.update_form.querySelector('.phone').value = parent.dataset.phone.replace(/\(|\)|-|\s+/g, '');
           this.update_form.querySelector('.tags').value = parent.dataset.tags;
+
+          this.displayTagToggle(tags);
         }
       });
     }
@@ -260,6 +265,59 @@ document.addEventListener('DOMContentLoaded', () => {
       });
     }
 
+    displayTagToggle(tags) {
+      Array.from(this.tag_toggle.children).slice(1).forEach(tag => {
+        tag.remove();
+      });
+      tags.forEach(tag => {
+        let button = document.createElement('button');
+        button.classList.add('tag');
+        button.textContent = tag;
+        this.tag_toggle.appendChild(button);
+      });
+    }
+
+    bindTagToggle() {
+      this.tag_toggle.addEventListener('click', (e) => {
+        e.preventDefault();
+        if (e.target.className === 'tag') {
+          this.updateTagValue(e.target.textContent);
+        }
+      });
+    }
+
+    updateTagValue(newTag) {
+      let currentInput = this.update_form.querySelector('.tags').value;
+      let inputArray = currentInput.split(',');
+
+      if (inputArray.includes(newTag)) {
+        inputArray = inputArray.filter(tag => tag !== newTag);
+      } else {
+        inputArray = inputArray[0] === '' ? [newTag] : inputArray.concat(newTag);
+      }
+
+      let newInput = inputArray.join(',');
+      this.update_form.querySelector('.tags').value = newInput;
+    }
+
+    bindCustomTag() {
+      let button = this.custom_tag.querySelector('#custom_button');
+      button.addEventListener('click', (e) => {
+        e.preventDefault();
+        let inputElement = button.previousElementSibling;
+        if (inputElement.value === '') return;
+
+        let newTag = inputElement.value;
+        let element = document.createElement('button');
+        element.classList.add('tag');
+        element.textContent = newTag;
+        this.tag_toggle.appendChild(element);
+
+        this.updateTagValue(newTag);
+        inputElement.value = '';
+      });
+    }
+
   }
 
   class Controller {
@@ -270,17 +328,20 @@ document.addEventListener('DOMContentLoaded', () => {
       this.onContactsUpdated();
 
       this.view.bindSearch();
+      this.view.bindCommonTag();
       this.view.bindCancel();
 
-      this.view.bindAddButton();
-      this.view.bindEditButton();
-
+      this.view.bindAddButton(this.model.allTags);
       this.view.bindAddContact(this.handleAddContact.bind(this));
+
+      this.view.bindEditButton(this.model.allTags);
       this.view.bindEditContact(this.handleEditContact.bind(this));
+
+      this.view.bindTagToggle();
+      this.view.bindCustomTag();
 
       this.view.bindDeleteContact(this.handleDeleteContact.bind(this));
 
-      this.view.bindCommonTag();
       this.view.bindShowAll();
     }
 

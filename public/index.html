@@ -36,7 +36,17 @@
     <input type="tel" name="phone_number" class="phone bar" maxlength=10 placeholder="e.g. 123456789"><br>
     <label for="tags">Tags:</label><br>
     <input type="text" name="tags" class="tags bar"><br>
-    <div class="tag_buttons"></div><br>
+
+    <div id="tag_toggle">
+      <h4>Click tag to add or remove tags:</h4>
+    </div>
+
+    <div id="custom_tag">
+      <h4>Or add a custom tag:</h4>
+      <input type="text" id="tag_bar" placeholder="e.g. friend">
+      <input type="button" id="custom_button" value="Add Tag">
+    </div><br>
+
     <input class="submit" type="submit">
     <input type="button" id="cancel" class="cancel" value="Cancel">
   </form>

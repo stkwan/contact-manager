@@ -13,13 +13,13 @@ h1 {
 }
 
 #list {
-  margin-left: 50px;
-  margin-right: 50px;
+  margin-left: 25px;
+  margin-right: 25px;
 }
 
 .contact {
   display: inline-block;
-  margin: 25px;
+  margin: 30px;
   max-width: 175px;
 }
 
@@ -53,20 +53,26 @@ input {
   padding: 5px;
 }
 
-#update_form > input.bar {
+.bar {
   width: 350px;
+}
+
+#tag_bar {
+  width: 350px;
+  margin-right: 10px;
 }
 
 .hide {
   display: none;
 }
 
-.tag {
-  border-radius: 20px;
+button.tag {
+  border-radius: 15px;
   border: 1px solid grey;
   font-size: 14px;
-  padding: 8px;
-  margin-bottom: 5px;
+  padding: 7px;
+  margin-bottom: 8px;
+  margin-right: 3px;
 }
 
 .cancel:hover, .submit:hover, .edit:hover, .delete:hover {
@@ -107,4 +113,21 @@ h3 {
   font-style: italic;
   font-size: 32px;
   font-family: 'Courier New', Courier, monospace;
+}
+
+#tag_toggle {
+  width: 400px;
+}
+
+#custom_button {
+  background-color: lightgreen;
+  color: black;
+  padding: 10px;
+  font-size: 
+  18px;
+}
+
+#custom_button:hover {
+  background-color: green;
+  color: white;
 }
