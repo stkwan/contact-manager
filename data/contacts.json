@@ -1,54 +1,5 @@
 [
   {
-    "full_name": "Charles Oliveira",
-    "phone_number": "1234453333",
-    "email": "Charles@DoBronx.com",
-    "tags": "champ,lightweight,Brazilian,blonde",
-    "id": 20
-  },
-  {
-    "full_name": "Max Holloway",
-    "phone_number": "3412341341",
-    "email": "max.holloway@blessed.com",
-    "tags": "champ,featherweight,ufc,Hawaiian",
-    "id": 21
-  },
-  {
-    "full_name": "Conor Mcgregor",
-    "phone_number": "1234512345",
-    "email": "conor@mcgregor.com",
-    "tags": "lightweight,ufc,legbroke,UK",
-    "id": 22
-  },
-  {
-    "full_name": "Tony Ferguson",
-    "phone_number": "1234512345",
-    "email": "tony@ferguson.com",
-    "tags": "lightweight,USA,ufc,funny",
-    "id": 23
-  },
-  {
-    "full_name": "Anderson Silva",
-    "phone_number": "1230987789",
-    "email": "anderson@silva.com",
-    "tags": "legbroke,ufc,goat,middleweight",
-    "id": 25
-  },
-  {
-    "full_name": "Justin Gaethje",
-    "phone_number": "2343243242",
-    "email": "the@highlight.com",
-    "tags": "ufc,USA,lightweight,highlight",
-    "id": 27
-  },
-  {
-    "full_name": "Bobby Lee",
-    "phone_number": "0000000001",
-    "email": "bobby@tigerbelly.com",
-    "tags": "podcaster,funny,comedian,Korean",
-    "id": 28
-  },
-  {
     "full_name": "Israel Adesanya",
     "phone_number": "8789778988",
     "email": "izzy@izzy.com",
@@ -56,31 +7,45 @@
     "id": 35
   },
   {
-    "full_name": "Michael Bisping",
-    "phone_number": "2332432423",
-    "email": "michael@bisping.com",
-    "tags": "ufc,funny,UK,middleweight",
-    "id": 36
-  },
-  {
-    "full_name": "Steven Yuen",
-    "phone_number": "3423423423",
-    "email": "steven@yuen.com",
-    "tags": "funny,Korean,actor",
-    "id": 38
-  },
-  {
-    "full_name": "Conan O'Brien",
-    "phone_number": "9384923849",
-    "email": "team@coco.com",
-    "tags": "podcaster,comedian,funny,late-night",
-    "id": 39
-  },
-  {
     "full_name": "Alex Pereira",
     "phone_number": "2342342342",
     "email": "potan@ufc.com",
     "tags": "champ,middleweight,ufc,USA,Brazilian",
     "id": 40
+  },
+  {
+    "full_name": "Tony Ferguson",
+    "phone_number": "8234923934",
+    "email": "tony@ferguson.com",
+    "tags": "lightweight,boat,CSO",
+    "id": 41
+  },
+  {
+    "full_name": "Bobby Lee",
+    "phone_number": "1231231231",
+    "email": "bobby@tigerbelly.com",
+    "tags": "comedian,podcaster,funny",
+    "id": 42
+  },
+  {
+    "full_name": "Max Holloway",
+    "phone_number": "1231231231",
+    "email": "max.holloway@blessed.com",
+    "tags": "featherweight,USA,Hawaiian,lightweight",
+    "id": 44
+  },
+  {
+    "full_name": "Charles Oliveira",
+    "phone_number": "1231231231",
+    "email": "Charles@DoBronx.com",
+    "tags": "Brazilian,lightweight",
+    "id": 47
+  },
+  {
+    "full_name": "Justin Gaethje",
+    "phone_number": "1312321231",
+    "email": "justing@gaethje.com",
+    "tags": "lightweight,ufc",
+    "id": 48
   }
 ]
