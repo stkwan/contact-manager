@@ -1,4 +1,4 @@
-document.addEventListener('DOMContentLoaded', () => {
+import debounce from './debounce.js';
 
   class Model {
     constructor() {
@@ -336,6 +336,12 @@ document.addEventListener('DOMContentLoaded', () => {
       this.model = model;
       this.view = view;
       this.onContactsUpdated();
+
+      this.handleSearch = debounce(this.handleSearch.bind(this), 300);
+      this.bind();
+    }
+
+    bind() {
       this.view.bindSearch(this.handleSearch.bind(this));
       this.view.bindCommonTag(this.handleCommonTag.bind(this));
       this.view.bindCancel(this.handleCancel.bind(this));
@@ -357,17 +363,17 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     handleAddContact(contact) {
-      model.addContact(contact);
+      this.model.addContact(contact);
       this.onContactsUpdated();
     }
 
     handleEditContact(contact) {
-      model.updateContact(contact);
+      this.model.updateContact(contact);
       this.onContactsUpdated();
     }
 
     handleDeleteContact(id) {
-      model.deleteContact(id);
+      this.model.deleteContact(id);
       this.onContactsUpdated();
     }
 
@@ -401,6 +407,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }
 
+document.addEventListener('DOMContentLoaded', () => {
   let model = new Model();
   let view = new View();
   let controller = new Controller(model, view);

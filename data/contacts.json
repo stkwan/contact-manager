@@ -3,7 +3,7 @@
     "full_name": "Alex Pereira",
     "phone_number": "2342342342",
     "email": "potan@ufc.com",
-    "tags": "Brazilian,middleweight,ufc",
+    "tags": "champ,Brazilian,middleweight,ufc",
     "id": 40
   },
   {
@@ -68,13 +68,6 @@
     "email": "bobby@tigerbelly.com",
     "tags": "podcaster,funny,comedian",
     "id": 54
-  },
-  {
-    "full_name": "Dan Hooker",
-    "phone_number": "0989089890",
-    "email": "dan@hangman.com",
-    "tags": "lightweight,ufc,NZ,featherweight",
-    "id": 57
   },
   {
     "full_name": "Israel Adesanya",
