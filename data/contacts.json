@@ -3,15 +3,8 @@
     "full_name": "Alex Pereira",
     "phone_number": "2342342342",
     "email": "potan@ufc.com",
-    "tags": "champ,Brazilian,middleweight,ufc,poatan",
+    "tags": "champ,Brazilian,middleweight,ufc",
     "id": 40
-  },
-  {
-    "full_name": "Tony Ferguson",
-    "phone_number": "8234923934",
-    "email": "tony@ferguson.com",
-    "tags": "ufc,funny,lightweight,CSO",
-    "id": 41
   },
   {
     "full_name": "Charles Oliveira",
@@ -24,7 +17,7 @@
     "full_name": "Justin Gaethje",
     "phone_number": "1312321231",
     "email": "justing@gaethje.com",
-    "tags": "lightweight,cagewarriors",
+    "tags": "lightweight,cagewarriors,champ",
     "id": 48
   },
   {
@@ -42,13 +35,6 @@
     "id": 51
   },
   {
-    "full_name": "Diego Sanchez",
-    "phone_number": "8299238923",
-    "email": "diego@sanchez.com",
-    "tags": "lightweight,welterweight,eagleFC",
-    "id": 52
-  },
-  {
     "full_name": "Colby Covington",
     "phone_number": "9299329839",
     "email": "colby@colbyinc.com",
@@ -63,17 +49,17 @@
     "id": 54
   },
   {
-    "full_name": "Israel Adesanya",
-    "phone_number": "3423423423",
-    "email": "izzy@izzy.com",
-    "tags": "NZ,middleweight,ufc",
-    "id": 59
+    "full_name": "Kevin Lee",
+    "phone_number": "",
+    "email": "kevin@eagleFC.com",
+    "tags": "lightweight,welterweight,eagleFC",
+    "id": 55
   },
   {
-    "full_name": "Michael Bisping",
-    "phone_number": "8987878887",
-    "email": "michael@bisping.com",
-    "tags": "middleweight,ufc,champ,cagewarriors",
-    "id": 60
+    "full_name": "Conor Mcgregor",
+    "phone_number": "9899898988",
+    "email": "conor@mcgregor.com",
+    "tags": "welterweight,ufc",
+    "id": 56
   }
 ]

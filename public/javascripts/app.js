@@ -252,7 +252,7 @@ class View {
         let confirm = window.confirm(`Are you sure you want to permanantly delete contact ${name}?`);
         if (confirm) {
           handler(id);
-          this.search.value = '';
+          this.showMain();
         }
       }
     });
