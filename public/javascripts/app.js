@@ -118,6 +118,7 @@ document.addEventListener('DOMContentLoaded', () => {
       this.hide(this.update_form);
       this.show(this.primary_inputs);
       this.hide(this.common_tags);
+      this.removeNoMatchMessage();
       Array.from(this.list.children).forEach(contact => this.show(contact));
       this.update_form.querySelector('h2').textContent = '';
       this.update_form.reset();
@@ -147,10 +148,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     bindSearch() {
       this.search.addEventListener('keyup', (e) => {
-        if (this.list.querySelector('h2')) {
-          this.list.querySelector('h2').remove();
-        }
-
+        this.removeNoMatchMessage();
         let entry = this.search.value.toLowerCase();
         let regEx = new RegExp(entry);
         let anyMatches = Array.from(this.list.children).some(contact => {
@@ -174,8 +172,15 @@ document.addEventListener('DOMContentLoaded', () => {
 
     renderNoMatches(name) {
       let message = document.createElement('h2');
-      message.textContent = `There are no contacts matching "${name}"`
+      message.textContent = `There are no contacts matching "${name}"`;
+      message.classList.add('noMatchMessage');
       this.list.appendChild(message);
+    }
+
+    removeNoMatchMessage() {
+      if (this.list.querySelector('h2.noMatchMessage')) {
+        this.list.querySelector('h2.noMatchMessage').remove();
+      }
     }
 
     bindAddButton() {

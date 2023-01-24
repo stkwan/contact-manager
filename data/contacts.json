@@ -3,7 +3,7 @@
     "full_name": "Israel Adesanya",
     "phone_number": "8789778988",
     "email": "izzy@izzy.com",
-    "tags": "middleweight,ufc,australian",
+    "tags": "ufc,middleweight,NZ",
     "id": 35
   },
   {
@@ -38,14 +38,42 @@
     "full_name": "Charles Oliveira",
     "phone_number": "1231231231",
     "email": "Charles@DoBronx.com",
-    "tags": "Brazilian,lightweight",
+    "tags": "Brazilian,lightweight,champ",
     "id": 47
   },
   {
     "full_name": "Justin Gaethje",
     "phone_number": "1312321231",
     "email": "justing@gaethje.com",
-    "tags": "lightweight,ufc",
+    "tags": "lightweight,cagewarriors",
     "id": 48
+  },
+  {
+    "full_name": "Conan O'Brien",
+    "phone_number": "2342423423",
+    "email": "team@coco.com",
+    "tags": "comedian,podcaster,funny,late-night",
+    "id": 49
+  },
+  {
+    "full_name": "Conor Mcgregor",
+    "phone_number": "1234123444",
+    "email": "conor@mcgregor.com",
+    "tags": "UK,lightweight,featherweight,ufc",
+    "id": 50
+  },
+  {
+    "full_name": "Kevin Lee",
+    "phone_number": "2131231231",
+    "email": "kevin@eagleFC.com",
+    "tags": "eagleFC,lightweight,welterweight",
+    "id": 51
+  },
+  {
+    "full_name": "Diego Sanchez",
+    "phone_number": "1231231231",
+    "email": "diego@sanchez.com",
+    "tags": "welterweight,eagleFC,lightweight",
+    "id": 52
   }
 ]
