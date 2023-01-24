@@ -76,7 +76,6 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }
 
-
   class View {
     constructor() {
       this.contactTemplateFunc = null;
@@ -119,54 +118,44 @@ document.addEventListener('DOMContentLoaded', () => {
       this.show(this.primary_inputs);
       this.hide(this.common_tags);
       this.removeNoMatchMessage();
-      Array.from(this.list.children).forEach(contact => this.show(contact));
       this.update_form.querySelector('h2').textContent = '';
       this.update_form.reset();
       this.search.value = '';
     }
 
+    clearList() {
+      Array.from(this.list.children).forEach(contact => contact.remove());
+    }
+
     renderContacts(contacts) {
-      Array.from(this.list.childNodes).forEach(node => node.remove());
+      this.clearList();
       let json = JSON.stringify(contacts);
       contacts = JSON.parse(json);
       contacts.forEach(contact => {
         contact.phone_number = '(' + contact.phone_number.slice(0, 3) 
                              + ') ' + contact.phone_number.slice(3, 6) 
                              + '-' + contact.phone_number.slice(6);
-        contact.tags = contact.tags.split(',');
+        if (contact.tags) {
+          contact.tags = contact.tags.split(',');
+        }
         let html = this.contactTemplateFunc(contact);
         this.list.insertAdjacentHTML('beforeend', html);
       });
     }
 
-    bindCancel() {
+    bindCancel(handler) {
       this.cancelButton.addEventListener('click', (e) => {
         e.preventDefault();
+        handler();
         this.showMain();
       });
     }
 
-    bindSearch() {
+    bindSearch(handler) {
       this.search.addEventListener('keyup', (e) => {
         this.removeNoMatchMessage();
         let entry = this.search.value.toLowerCase();
-        let regEx = new RegExp(entry);
-        let anyMatches = Array.from(this.list.children).some(contact => {
-          return regEx.test(String(contact.dataset.name).toLowerCase());
-        });
-
-        Array.from(this.list.children).forEach(contact => {
-          let name = String(contact.dataset.name).toLowerCase();
-          if (!regEx.test(name)) {
-            this.hide(contact);
-          } else {
-            this.show(contact);
-          }
-        });
-
-        if (!anyMatches) {
-          this.renderNoMatches(entry);
-        }
+        handler(entry);
       });
     }
 
@@ -237,7 +226,11 @@ document.addEventListener('DOMContentLoaded', () => {
           let data = {};
           Array.from(this.update_form.elements).forEach(input => {
             if (input.type !== 'submit' && input.type !== 'button') {
-              data[input.name] = input.value;
+              if (input.classList.contains('tags') && input.value === '') {
+                data[input.name] = null;
+              } else {
+                data[input.name] = input.value;
+              }
             }
           });
           data.id = this.viewingId;
@@ -263,24 +256,15 @@ document.addEventListener('DOMContentLoaded', () => {
       });
     }
 
-    bindCommonTag() {
+    bindCommonTag(handler) {
       this.list.addEventListener('click', (e) => {
         e.preventDefault();
         if (e.target.tagName === 'BUTTON' && e.target.classList.contains('tag')) {
-          this.showOnlyContactsWith(e.target.textContent);
-        }
-      });
-    }
-
-    showOnlyContactsWith(tag) {
-      this.hideMain();
-      this.show(this.common_tags);
-      this.common_tags.querySelector('#tagname').textContent = tag;
-      Array.from(this.list.children).forEach(contact => {
-        if (!String(contact.dataset.tags).split(',').includes(tag)) {
-          this.hide(contact);
-        } else {
-          this.show(contact);
+          let tag = e.target.textContent
+          handler(tag);
+          this.hideMain();
+          this.show(this.common_tags);
+          this.common_tags.querySelector('#tagname').textContent = tag;
         }
       });
     }
@@ -288,6 +272,7 @@ document.addEventListener('DOMContentLoaded', () => {
     bindShowAllContacts() {
       this.common_tags.querySelector('input').addEventListener('click', (e) => {
         e.preventDefault();
+        this.cancelButton.click();
         this.showMain();
       });
     }
@@ -351,9 +336,9 @@ document.addEventListener('DOMContentLoaded', () => {
       this.model = model;
       this.view = view;
       this.onContactsUpdated();
-      this.view.bindSearch();
-      this.view.bindCommonTag();
-      this.view.bindCancel();
+      this.view.bindSearch(this.handleSearch.bind(this));
+      this.view.bindCommonTag(this.handleCommonTag.bind(this));
+      this.view.bindCancel(this.handleCancel.bind(this));
       this.view.bindAddButton();
       this.view.bindEditButton();
       this.view.bindAddContact(this.handleAddContact.bind(this));
@@ -384,6 +369,35 @@ document.addEventListener('DOMContentLoaded', () => {
     handleDeleteContact(id) {
       model.deleteContact(id);
       this.onContactsUpdated();
+    }
+
+    async handleCancel() {
+      this.onContactsUpdated();
+    }
+
+    async handleSearch(entry) {
+      let contacts = await this.model.refreshContacts();
+      let regEx = new RegExp(entry);
+      let matches = contacts.filter(contact => regEx.test(contact.full_name.toLowerCase()));
+      if (matches.length < 1) {
+        this.view.clearList();
+        this.view.renderNoMatches(entry);
+      } else {
+        this.view.renderContacts(matches);
+      }
+    }
+
+    async handleCommonTag(tag) {
+      let contacts = await this.model.refreshContacts();
+      let contactsMatchingTag = contacts.filter(contact => {
+        if (contact.tags) {
+          let tags = contact.tags.split(',');
+          return tags.includes(tag);
+        } else {
+          return false;
+        }
+      });
+      this.view.renderContacts(contactsMatchingTag);
     }
   }
 

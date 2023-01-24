@@ -1,38 +1,17 @@
 [
   {
-    "full_name": "Israel Adesanya",
-    "phone_number": "8789778988",
-    "email": "izzy@izzy.com",
-    "tags": "ufc,middleweight,NZ",
-    "id": 35
-  },
-  {
     "full_name": "Alex Pereira",
     "phone_number": "2342342342",
     "email": "potan@ufc.com",
-    "tags": "champ,middleweight,ufc,USA,Brazilian",
+    "tags": "Brazilian,middleweight,ufc",
     "id": 40
   },
   {
     "full_name": "Tony Ferguson",
     "phone_number": "8234923934",
     "email": "tony@ferguson.com",
-    "tags": "lightweight,boat,CSO",
+    "tags": "ufc,funny,lightweight",
     "id": 41
-  },
-  {
-    "full_name": "Bobby Lee",
-    "phone_number": "1231231231",
-    "email": "bobby@tigerbelly.com",
-    "tags": "comedian,podcaster,funny",
-    "id": 42
-  },
-  {
-    "full_name": "Max Holloway",
-    "phone_number": "1231231231",
-    "email": "max.holloway@blessed.com",
-    "tags": "featherweight,USA,Hawaiian,lightweight",
-    "id": 44
   },
   {
     "full_name": "Charles Oliveira",
@@ -64,16 +43,44 @@
   },
   {
     "full_name": "Kevin Lee",
-    "phone_number": "2131231231",
+    "phone_number": "9289289238",
     "email": "kevin@eagleFC.com",
-    "tags": "eagleFC,lightweight,welterweight",
+    "tags": "welterweight,eagleFC,lightweight",
     "id": 51
   },
   {
     "full_name": "Diego Sanchez",
-    "phone_number": "1231231231",
+    "phone_number": "8299238923",
     "email": "diego@sanchez.com",
-    "tags": "welterweight,eagleFC,lightweight",
+    "tags": "lightweight,welterweight,eagleFC",
     "id": 52
+  },
+  {
+    "full_name": "Colby Covington",
+    "phone_number": "9299329839",
+    "email": "colby@colbyinc.com",
+    "tags": "welterweight,ufc,funny",
+    "id": 53
+  },
+  {
+    "full_name": "Bobby Lee",
+    "phone_number": "2342342342",
+    "email": "bobby@tigerbelly.com",
+    "tags": "podcaster,funny,comedian",
+    "id": 54
+  },
+  {
+    "full_name": "Dan Hooker",
+    "phone_number": "0989089890",
+    "email": "dan@hangman.com",
+    "tags": "lightweight,ufc,NZ,featherweight",
+    "id": 57
+  },
+  {
+    "full_name": "Israel Adesanya",
+    "phone_number": "3423423423",
+    "email": "izzy@izzy.com",
+    "tags": "NZ,middleweight,ufc",
+    "id": 59
   }
 ]
