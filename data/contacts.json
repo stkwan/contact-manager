@@ -3,14 +3,14 @@
     "full_name": "Alex Pereira",
     "phone_number": "2342342342",
     "email": "potan@ufc.com",
-    "tags": "champ,Brazilian,middleweight,ufc",
+    "tags": "champ,Brazilian,middleweight,ufc,poatan",
     "id": 40
   },
   {
     "full_name": "Tony Ferguson",
     "phone_number": "8234923934",
     "email": "tony@ferguson.com",
-    "tags": "ufc,funny,lightweight",
+    "tags": "ufc,funny,lightweight,CSO",
     "id": 41
   },
   {
@@ -33,13 +33,6 @@
     "email": "team@coco.com",
     "tags": "comedian,podcaster,funny,late-night",
     "id": 49
-  },
-  {
-    "full_name": "Conor Mcgregor",
-    "phone_number": "1234123444",
-    "email": "conor@mcgregor.com",
-    "tags": "UK,lightweight,featherweight,ufc",
-    "id": 50
   },
   {
     "full_name": "Kevin Lee",
@@ -75,5 +68,12 @@
     "email": "izzy@izzy.com",
     "tags": "NZ,middleweight,ufc",
     "id": 59
+  },
+  {
+    "full_name": "Michael Bisping",
+    "phone_number": "8987878887",
+    "email": "michael@bisping.com",
+    "tags": "middleweight,ufc,champ,cagewarriors",
+    "id": 60
   }
 ]
